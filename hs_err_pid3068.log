@@ -1,0 +1,160 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=3068, tid=0x0000000000009e24
+#
+# JRE version:  (8.0_242-b01) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002f11000):  JavaThread "Unknown thread" [_thread_in_vm, id=40484, stack(0x0000000002d90000,0x0000000002e90000)]
+
+Stack: [0x0000000002d90000,0x0000000002e90000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000002f11000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=40484, stack(0x0000000002d90000,0x0000000002e90000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c3c00000, size: 4036 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 75776K, used 1300K [0x000000076bf00000, 0x0000000771380000, 0x00000007c0000000)
+  eden space 65024K, 2% used [0x000000076bf00000,0x000000076c0451f8,0x000000076fe80000)
+  from space 10752K, 0% used [0x0000000770900000,0x0000000770900000,0x0000000771380000)
+  to   space 10752K, 0% used [0x000000076fe80000,0x000000076fe80000,0x0000000770900000)
+ ParOldGen       total 173568K, used 0K [0x00000006c3c00000, 0x00000006ce580000, 0x000000076bf00000)
+  object space 173568K, 0% used [0x00000006c3c00000,0x00000006c3c00000,0x00000006ce580000)
+ Metaspace       used 779K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 74K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000123d0000,0x0000000012bc0000] byte_map_base: 0x000000000edb2000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005402f030
+ Begin Bits: [0x0000000013910000, 0x0000000017820000)
+ End Bits:   [0x0000000017820000, 0x000000001b730000)
+
+Polling page: 0x00000000010f0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000003010000, 0x0000000003280000, 0x0000000012010000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.254 loading class java/lang/Short
+Event: 0.254 loading class java/lang/Short done
+Event: 0.254 loading class java/lang/Integer
+Event: 0.254 loading class java/lang/Integer done
+Event: 0.254 loading class java/lang/Long
+Event: 0.254 loading class java/lang/Long done
+Event: 0.257 loading class java/lang/NullPointerException
+Event: 0.257 loading class java/lang/NullPointerException done
+Event: 0.257 loading class java/lang/ArithmeticException
+Event: 0.257 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff6ebe40000 - 0x00007ff6ebe71000 	C:\Program Files\Android\Android Studio\jre\bin\java.EXE
+0x00007ffc3f510000 - 0x00007ffc3f705000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffc3d570000 - 0x00007ffc3d62d000 	C:\Windows\System32\KERNEL32.dll
+0x00007ffc3c8e0000 - 0x00007ffc3c9f9000 	C:\Windows\system32\hmpalert.dll
+0x00007ffc3cfc0000 - 0x00007ffc3d289000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffc3f380000 - 0x00007ffc3f42c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffc3f430000 - 0x00007ffc3f4ce000 	C:\Windows\System32\msvcrt.dll
+0x00007ffc3eff0000 - 0x00007ffc3f08c000 	C:\Windows\System32\sechost.dll
+0x00007ffc3df70000 - 0x00007ffc3e09b000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffc3d700000 - 0x00007ffc3d8a0000 	C:\Windows\System32\USER32.dll
+0x00007ffc3cf90000 - 0x00007ffc3cfb2000 	C:\Windows\System32\win32u.dll
+0x00007ffc3f1b0000 - 0x00007ffc3f1da000 	C:\Windows\System32\GDI32.dll
+0x00007ffc3cc50000 - 0x00007ffc3cd5b000 	C:\Windows\System32\gdi32full.dll
+0x00007ffc3d390000 - 0x00007ffc3d42d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffc3d290000 - 0x00007ffc3d390000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffc0b270000 - 0x00007ffc0b50a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d\COMCTL32.dll
+0x00007ffc3e180000 - 0x00007ffc3e1b0000 	C:\Windows\System32\IMM32.DLL
+0x00000000534b0000 - 0x0000000053582000 	C:\Program Files\Android\Android Studio\jre\jre\bin\msvcr100.dll
+0x0000000053860000 - 0x00000000540ab000 	C:\Program Files\Android\Android Studio\jre\jre\bin\server\jvm.dll
+0x00007ffc3f310000 - 0x00007ffc3f318000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffc34140000 - 0x00007ffc34149000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffc3e1b0000 - 0x00007ffc3e21b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffc34520000 - 0x00007ffc3452a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffc1bc50000 - 0x00007ffc1bc77000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffc329c0000 - 0x00007ffc329cf000 	C:\Program Files\Android\Android Studio\jre\jre\bin\verify.dll
+0x00007ffc31590000 - 0x00007ffc315b9000 	C:\Program Files\Android\Android Studio\jre\jre\bin\java.dll
+0x00007ffc31570000 - 0x00007ffc31586000 	C:\Program Files\Android\Android Studio\jre\jre\bin\zip.dll
+
+VM Arguments:
+java_command: <unknown>
+java_class_path (initial): .
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\System32;C:\Windows\System32\WindowsPowerShell\v1.0;"C:\Windows\System32;C:\Users\utsav\flutter_windows_1.22.2-stable\flutter\bin";C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\utsav\AppData\Local\Microsoft\WindowsApps;"C:\Windows\System32;C:\Users\utsav\flutter_windows_1.22.2-stable\flutter\bin";C:\Windows\System32;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\bin\git.exe;C:\Program Files\Git\cmd;C:\Program Files\Git\git-cmd.exe;C:\Users\utsav\AppData\Roaming\npm;C:\Users\utsav\flutter_windows_1.22.2-stable\flutter\bin\mingit\cmd
+USERNAME=utsav
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.804)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16528072k(671848k free), swap 52751044k(5568k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b01) for windows-amd64 JRE (1.8.0_242-release-1644-b01), built by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Fri Mar 19 23:16:40 2021
+timezone: India Standard Time
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

@@ -1,0 +1,97 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --verbose --track-widget-creation --device-id=11c7d441 --start-paused --no-sound-null-safety --dart-define=flutter.inspector.structuredErrors=true lib\main.dart
+
+## exception
+
+NoSuchMethodError: NoSuchMethodError: The method '[]' was called on null.
+Receiver: null
+Tried calling: []("type")
+
+```
+#0      Object.noSuchMethod (dart:core-patch/object_patch.dart:54:5)
+#1      VmService._processResponse (package:vm_service/src/vm_service.dart:2080:27)
+#2      VmService._processMessageStr (package:vm_service/src/vm_service.dart:2064:7)
+#3      VmService._processMessage (package:vm_service/src/vm_service.dart:2015:7)
+#4      _rootRunUnary (dart:async/zone.dart:1362:47)
+#5      _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+#6      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+#7      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:341:11)
+#8      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:271:7)
+#9      _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:735:19)
+#10     _StreamController._add (dart:async/stream_controller.dart:609:7)
+#11     _StreamController.add (dart:async/stream_controller.dart:556:5)
+#12     new _WebSocketImpl._fromSocket.<anonymous closure> (dart:_http/websocket_impl.dart:1145:21)
+#13     _rootRunUnary (dart:async/zone.dart:1362:47)
+#14     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+#15     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+#16     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:341:11)
+#17     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:271:7)
+#18     _SinkTransformerStreamSubscription._add (dart:async/stream_transformers.dart:63:11)
+#19     _EventSinkWrapper.add (dart:async/stream_transformers.dart:13:11)
+#20     _WebSocketProtocolTransformer._messageFrameEnd (dart:_http/websocket_impl.dart:338:23)
+#21     _WebSocketProtocolTransformer.add (dart:_http/websocket_impl.dart:232:46)
+#22     _SinkTransformerStreamSubscription._handleData (dart:async/stream_transformers.dart:111:24)
+#23     _rootRunUnary (dart:async/zone.dart:1362:47)
+#24     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+#25     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+#26     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:341:11)
+#27     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:271:7)
+#28     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:735:19)
+#29     _StreamController._add (dart:async/stream_controller.dart:609:7)
+#30     _StreamController.add (dart:async/stream_controller.dart:556:5)
+#31     _Socket._onData (dart:io-patch/socket_patch.dart:2140:41)
+#32     _rootRunUnary (dart:async/zone.dart:1370:13)
+#33     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+#34     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+#35     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:341:11)
+#36     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:271:7)
+#37     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:735:19)
+#38     _StreamController._add (dart:async/stream_controller.dart:609:7)
+#39     _StreamController.add (dart:async/stream_controller.dart:556:5)
+#40     new _RawSocket.<anonymous closure> (dart:io-patch/socket_patch.dart:1676:33)
+#41     _NativeSocket.issueReadEvent.issue (dart:io-patch/socket_patch.dart:1188:14)
+#42     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#43     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#44     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:120:13)
+#45     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:185:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel master, 1.26.0-13.0.pre.13, on Microsoft Windows [Version 10.0.19041.1052], locale en-IN)
+    • Flutter version 1.26.0-13.0.pre.13 at C:\Users\utsav\flutter_windows_1.22.2-stable\flutter
+    • Framework revision 9209319dd1 (5 months ago), 2021-01-15 14:34:03 +0530
+    • Engine revision efa768683e
+    • Dart version 2.12.0 (build 2.12.0-225.0.dev)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.2)
+    • Android SDK at C:\Users\utsav\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.2
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✓] Android Studio (version 4.1.0)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+
+[✓] Connected device (4 available)
+    • Redmi Note 7S (mobile)      • 11c7d441      • android-arm64  • Android 9 (API 28)
+    • sdk gphone x86 arm (mobile) • emulator-5554 • android-x86    • Android 11 (API 30) (emulator)
+    • Chrome (web)                • chrome        • web-javascript • Google Chrome 91.0.4472.114
+    • Edge (web)                  • edge          • web-javascript • Microsoft Edge 91.0.864.48
+
+• No issues found!
+```
